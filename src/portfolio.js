@@ -1,46 +1,45 @@
 const header = {
-  // all the properties are optional - can be left empty or deleted
+
   homepage: 'https://rjshkhr.github.io/cleanfolio',
-  title: 'JS.',
+  title: 'PM.',
 }
 
 const about = {
-  // all the properties are optional - can be left empty or deleted
-  name: 'John Smith',
-  role: 'Front End Engineer',
+
+  name: 'Praneeth M',
+  role: 'Learning Developer',
   description:
-    'Adipisicing sit fugit ullam unde aliquid sequi Facilis soluta facilis perspiciatis corporis nulla aspernatur. Autem eligendi rerum delectus modi quisquam? Illo ut quasi nemo ipsa cumque perspiciatis! Maiores minima consectetur.',
+    'I’m a Learning Developer with a passion for excellence and a commitment to continuous improvement. I’m dedicated to mastering my craft, solving complex challenges, and bringing innovative ideas to life. Each step I take is towards creating something truly remarkable. Follow along as I turn vision into reality and strive for greatness.',
   resume: 'https://example.com',
   social: {
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com',
+    linkedin: 'https://www.linkedin.com/in/praneeth-m-7419802a8/',
+    github: 'https://github.com/praneethm05',
   },
 }
 
 const projects = [
-  // projects can be added an removed
-  // if there are no projects, Projects section won't show up
+
   {
-    name: 'Project 1',
+    name: 'Hunger Green',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
+      'Get ready for a fresh take on healthy living! Hunger Green is on the horizon, promising to redefine your approach to diet and wellness. Stay tuned for an app that will simplify your health journey and inspire better choices. A new way to nourish your life is coming soon!',
+    stack: ['React-Native', 'Gemini', 'Firebase'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
   },
   {
-    name: 'Project 2',
+    name: 'SubscribeUS',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
+      'Simplify your life with SubscribeUS! Soon, you’ll have a seamless way to manage all your subscriptions effortlessly. Stay tuned for an intuitive system that keeps track of your services and helps you stay organized. Get ready for a smarter approach to subscription management!',
+    stack: ['Flutter', 'MongoDB'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
   },
   {
-    name: 'Project 3',
+    name: 'Crick P',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
+      'Something exciting is coming your way! Crick P is set to revolutionize your sports experience with innovative features and tools. Stay tuned for a new way to elevate your game and connect with the community. Get ready for a game-changer!',
+    stack: ['Flutter', 'Firebase'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
   },
@@ -52,20 +51,14 @@ const skills = [
   'HTML',
   'CSS',
   'JavaScript',
-  'TypeScript',
   'React',
-  'Redux',
-  'SASS',
-  'Material UI',
+  'Flutter',
   'Git',
-  'CI/CD',
-  'Jest',
-  'Enzyme',
 ]
 
 const contact = {
-  // email is optional - if left empty Contact section won't show up
-  email: 'johnsmith@mail.com',
+  
+  email: 'praneethmofficial@gmail.com',
 }
 
 export { header, about, projects, skills, contact }
