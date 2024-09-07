@@ -6,7 +6,7 @@ const header = {
 
 const about = {
 
-  name: 'Praneeth M',
+  name: 'Praneeth',
   role: 'Learning Developer',
   description:
     'I’m a Learning Developer with a passion for excellence and a commitment to continuous improvement. I’m dedicated to mastering my craft, solving complex challenges, and bringing innovative ideas to life. Each step I take is towards creating something truly remarkable. Follow along as I turn vision into reality and strive for greatness.',
