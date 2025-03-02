@@ -53,6 +53,11 @@ const skills = [
   'JavaScript',
   'React',
   'Flutter',
+  'React Native',
+  'Figma',
+  'MongoDB',
+  'Express.js',
+  'Node.js',
   'Git',
 ]
 
