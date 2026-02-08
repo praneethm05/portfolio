@@ -1,12 +1,61 @@
 .skills__list {
-  max-width: 450px;
+  max-width: 900px;
   width: 95%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 1.5em;
+  /* Add gap for grid feel */
 }
 
 .skills__list-item {
-  margin: 0.5em;
+  margin: 0;
+  /* Removing the margin and using gap instead */
+  padding: 1.5em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+
+  /* Glassmorphism overrides if needed, inheriting from btn--plain but customizing */
+  background: var(--clr-bg-alt);
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.dark .skills__list-item {
+  background: rgba(17, 34, 64, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skills__list-item:hover {
+  transform: translateY(-5px);
+  /* Use theme primary color for border/shadow on hover */
+  border: 1px solid var(--clr-primary);
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.1);
+}
+
+.skill__icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.8em;
+  /* Simple icons are SVGs, we can try to filter them to theme color if needed, 
+     but loading them with a specific hex in URL is better. 
+     Currently using '8892b0' in JS. 
+     On hover, perhaps we can change the filter or let it be.
+  */
+  transition: all 0.2s ease;
+}
+
+.skills__list-item:hover .skill__icon {
+  transform: scale(1.1);
+  /* Optional: filter to primary color on hover if not done via URL */
+}
+
+.skill__name {
+  font-weight: 500;
+  font-size: 0.9rem;
 }

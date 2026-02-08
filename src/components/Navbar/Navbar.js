@@ -56,6 +56,7 @@ const Navbar = () => {
         ) : null}
       </ul>
 
+      {/* Theme toggle disabled
       <button
         type='button'
         onClick={toggleTheme}
@@ -64,6 +65,7 @@ const Navbar = () => {
       >
         {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
       </button>
+      */}
 
       <button
         type='button'

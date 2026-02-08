@@ -4,20 +4,28 @@ import PropTypes from 'prop-types'
 const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
-  const [themeName, setThemeName] = useState('light')
+  const [themeName, setThemeName] = useState('dark')
 
   useEffect(() => {
+    // Force dark mode
+    setThemeName('dark')
+
+    /* Original Theme Logic
     const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     setThemeName(darkMediaQuery.matches ? 'dark' : 'light')
     darkMediaQuery.addEventListener('change', (e) => {
       setThemeName(e.matches ? 'dark' : 'light')
     });
+    */
   }, [])
 
   const toggleTheme = () => {
+    // Disabled
+    /* Original Toggle Logic
     const name = themeName === 'dark' ? 'light' : 'dark'
     localStorage.setItem('themeName', name)
     setThemeName(name)
+    */
   }
 
   return (

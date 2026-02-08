@@ -1,3 +1,32 @@
 .contact {
   flex-direction: column;
+  margin-top: 5em;
+}
+
+.contact__btn {
+  margin-top: 2em;
+  padding: 1em 2.5em;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  /* Pillow shape for modern look */
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--clr-bg), var(--clr-bg)) padding-box,
+    linear-gradient(45deg, var(--clr-primary), #bd34fe) border-box;
+  color: var(--clr-primary);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(100, 255, 218, 0.2);
+}
+
+.contact__btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(100, 255, 218, 0.4);
+  background:
+    linear-gradient(45deg, var(--clr-primary), #bd34fe) padding-box,
+    linear-gradient(45deg, var(--clr-primary), #bd34fe) border-box;
+  color: var(--clr-bg);
+  /* Contrast text on hover */
 }

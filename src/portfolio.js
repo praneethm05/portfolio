@@ -7,9 +7,9 @@ const header = {
 const about = {
 
   name: 'Praneeth M',
-  role: 'Learning Developer',
+  role: 'Developer focused on building experiences.',
   description:
-    'I’m a Learning Developer with a passion for excellence and a commitment to continuous improvement. I’m dedicated to mastering my craft, solving complex challenges, and bringing innovative ideas to life. Each step I take is towards creating something truly remarkable. Follow along as I turn vision into reality and strive for greatness.',
+    'I craft high-performance applications and immersive digital experiences. From 3D graphics engines to polished web platforms, I blend engineering depth with creative design to build software that stands out.',
   resume: 'https://example.com',
   social: {
     linkedin: 'https://www.linkedin.com/in/praneeth-m-7419802a8/',
@@ -18,7 +18,32 @@ const about = {
 }
 
 const projects = [
-
+  // projects can be added or removed
+  // if there are no projects, Projects section won't show up
+  {
+    name: 'BLIP Engine',
+    description:
+      'A custom 3D rendering and physics engine with a Flutter-based editor UI. Features a complete rendering pipeline in C++/OpenGL with custom GLSL shaders, a C FFI bridge to Dart, and a DGCNN model for 3D object classification.',
+    stack: ['C++', 'OpenGL', 'GLSL', 'Flutter', 'Dart', 'Python', 'PyTorch'],
+    sourceCode: 'https://github.com/praneethm05',
+    livePreview: 'https://github.com/praneethm05',
+  },
+  {
+    name: 'The Campus Connect',
+    description:
+      'A modern campus event & communication platform. Built with SvelteKit and Supabase, featuring real-time messaging, committee management, and a polished UI with dynamic theming.',
+    stack: ['SvelteKit', 'Supabase', 'Tailwind CSS', 'TypeScript'],
+    sourceCode: 'https://github.com/praneethm05',
+    livePreview: 'https://github.com/praneethm05',
+  },
+  {
+    name: 'Kalajna',
+    description:
+      'An event registration and gallery website with a polished, responsive design. Features a video hero section, AOS animations, and a clean dark-themed aesthetic.',
+    stack: ['HTML', 'CSS', 'Tailwind CSS', 'AOS'],
+    sourceCode: 'https://github.com/praneethm05',
+    livePreview: 'https://github.com/praneethm05',
+  },
   {
     name: 'Hunger Green',
     description:
@@ -51,19 +76,48 @@ const skills = [
   'HTML',
   'CSS',
   'JavaScript',
+  'TypeScript',
   'React',
+  'Svelte',
   'Flutter',
-  'React Native',
-  'Figma',
-  'MongoDB',
-  'Express.js',
-  'Node.js',
+  'Dart',
+  'C++',
+  'Python',
+  'OpenGL',
+  'GLSL',
+  'Tailwind CSS',
   'Git',
+  'PyTorch',
+  'Supabase',
+  'MongoDB',
+  'Node.js',
 ]
 
 const contact = {
-  
+
   email: 'praneethmofficial@gmail.com',
 }
 
-export { header, about, projects, skills, contact }
+const skillIcons = {
+  HTML: 'html5',
+  CSS: 'css',
+  JavaScript: 'javascript',
+  TypeScript: 'typescript',
+  React: 'react',
+  Svelte: 'svelte',
+  Flutter: 'flutter',
+  Dart: 'dart',
+  'C++': 'cplusplus',
+  Python: 'python',
+  OpenGL: 'opengl',
+  GLSL: 'opengl',
+  'Tailwind CSS': 'tailwindcss',
+  Git: 'git',
+  PyTorch: 'pytorch',
+  Supabase: 'supabase',
+  MongoDB: 'mongodb',
+  'Node.js': 'nodedotjs',
+  'React Native': 'react',
+}
+
+export { header, about, projects, skills, contact, skillIcons }

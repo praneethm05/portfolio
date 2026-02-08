@@ -4,10 +4,19 @@
   text-align: center;
   box-shadow: var(--shadow);
   transition: transform 0.2s linear;
+  background-color: var(--clr-bg-alt);
+  border-radius: 5px;
+}
+
+.dark .project {
+  background: rgba(17, 34, 64, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .project:hover {
   transform: translateY(-7px);
+  box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
 }
 
 .project__description {

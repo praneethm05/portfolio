@@ -1,9 +1,28 @@
 .header {
-  height: 8em;
-  max-width: 1100px;
-  width: 95%;
+  height: 5em;
+  /* Slightly smaller for a cleaner look */
+  max-width: 100%;
+  /* Spanning full width for sticky header */
+  width: 100%;
+  padding: 0 5%;
+  /* Restore the centering feel */
   margin: 0 auto;
   justify-content: space-between;
+
+  /* Sticky & Glass */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.dark .header {
+  background: rgba(10, 25, 47, 0.85);
+  /* Matches dark bg with transparency */
+  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
 }
 
 @media (max-width: 600px) {

@@ -1,19 +1,116 @@
 .about {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  /* Text gets slightly more space */
+  gap: 2em;
+  align-items: center;
+  margin-top: 6em;
+  /* Adjusted for sticky header */
+  min-height: 80vh;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+  /* Increased max-width for split layout */
+  width: 90%;
+  position: relative;
+}
+
+.about__content {
+  display: flex;
   flex-direction: column;
-  margin-top: 3em;
+  align-items: flex-start;
+  z-index: 10;
+}
+
+.about__visual {
+  position: relative;
+  height: 500px;
+  /* Fixed height for visual area */
+  width: 100%;
+  /* Optional: subtle background for the visual area */
+  /* background: radial-gradient(circle, rgba(100, 255, 218, 0.05) 0%, transparent 70%); */
+  transform: translateX(40px);
+  /* Shift entire visual group right */
+}
+
+.about__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  /* Changed from -1 to 0 */
+  pointer-events: none;
+}
+
+.floating-icon {
+  position: absolute;
+  opacity: 0.5;
+  /* Significantly increased visibility */
+  animation: float 20s infinite ease-in-out;
+}
+
+/* Ensure text is above background icons */
+.about h1,
+.about h2,
+.about p,
+.about__contact {
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
 }
 
 .about__name {
   color: var(--clr-primary);
+  /* Gradient text effect */
+  background: linear-gradient(45deg, var(--clr-primary), #64ffda, #bd34fe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.dark .about__name {
+  background: linear-gradient(90deg, #64ffda, #00bcd4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin-bottom: 0.2em;
 }
 
 .about__role {
-  margin-top: 1.2em;
+  margin-top: 0;
+  font-size: 3rem;
+  opacity: 0.8;
+  color: var(--clr-fg-alt);
 }
 
 .about__desc {
-  font-size: 1rem;
+  font-size: 1.2rem;
   max-width: 600px;
+  line-height: 1.6;
+  opacity: 0;
+  /* Managed by animation class */
 }
 
 .about__desc,
@@ -29,9 +126,45 @@
   margin-right: 1em;
 }
 
+/* .about__background removed in favor of .about__visual container logic */
+
+/* .about__background removed in favor of .about__visual container logic */
+
+.floating-icon {
+  /* position: absolute;  Moved to wrapper in JS */
+  opacity: 0.6;
+  /* High visibility in dedicated area */
+  filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.3));
+  /* Glow effect */
+  animation: float 6s infinite ease-in-out alternate;
+  /* Faster, more dynamic float */
+}
+
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr;
+    /* Stack on smaller screens */
+    margin-top: 4em;
+    text-align: center;
+    /* Center text on mobile */
+  }
+
+  .about__content {
+    align-items: center;
+    /* Center items on mobile */
+  }
+
+  .about__visual {
+    display: none;
+    /* Hide complex visual on mobile or move to background */
+    /* Alternatively: height: 200px; and minimal icons */
+  }
+}
+
 @media (max-width: 600px) {
   .app .about {
-    align-items: flex-start;
+    align-items: center;
+    /* Override previous flex-start */
     margin-top: 2em;
   }
 }
