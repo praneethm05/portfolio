@@ -1,6 +1,6 @@
 const header = {
 
-  homepage: 'https://rjshkhr.github.io/cleanfolio',
+  homepage: 'https://findpraneeth.vercel.app/',
   title: 'PM.',
 }
 
