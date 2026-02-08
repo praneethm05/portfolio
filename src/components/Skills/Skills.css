@@ -41,7 +41,8 @@
 .skill__icon {
   width: 40px;
   height: 40px;
-  margin-bottom: 0.8em;
+  margin-bottom: 1.5em;
+  /* Increased spacing */
   /* Simple icons are SVGs, we can try to filter them to theme color if needed, 
      but loading them with a specific hex in URL is better. 
      Currently using '8892b0' in JS. 

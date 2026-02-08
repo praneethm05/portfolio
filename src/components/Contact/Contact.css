@@ -10,7 +10,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-radius: 50px;
+  /* border-radius: 50px; Removed for square look */
   /* Pillow shape for modern look */
   border: 2px solid transparent;
   background:

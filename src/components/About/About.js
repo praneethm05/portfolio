@@ -10,16 +10,28 @@ const About = () => {
   const visualRef = useRef(null)
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (!visualRef.current) return
-      const { left, top, width, height } = visualRef.current.getBoundingClientRect()
-      const x = (e.clientX - left - width / 2) / 25
-      const y = (e.clientY - top - height / 2) / 25
-      setOffset({ x, y })
-    }
+    const visualElement = visualRef.current
+    if (visualElement) {
+      const handleMouseMove = (e) => {
+        const { left, top, width, height } = visualElement.getBoundingClientRect()
+        const x = (e.clientX - left - width / 2) / 25
+        const y = (e.clientY - top - height / 2) / 25
+        setOffset({ x, y })
+      }
 
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
+      const handleMouseLeave = () => {
+        setOffset({ x: 0, y: 0 })
+      }
+
+      visualElement.addEventListener('mousemove', handleMouseMove)
+      visualElement.addEventListener('mouseleave', handleMouseLeave)
+
+      return () => {
+        visualElement.removeEventListener('mousemove', handleMouseMove)
+        visualElement.removeEventListener('mouseleave', handleMouseLeave)
+      }
+    }
+    return undefined // Explicit return to satisfy consistent-return
   }, [])
 
   // Positions relative to the right column (visual area)
