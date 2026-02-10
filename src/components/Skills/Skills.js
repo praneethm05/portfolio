@@ -1,4 +1,3 @@
-import uniqid from 'uniqid'
 import { skills, skillIcons } from '../../portfolio'
 import './Skills.css'
 
@@ -14,11 +13,12 @@ const Skills = () => {
           const iconUrl = `https://cdn.simpleicons.org/${iconSlug}/64ffda` // Default color matching theme
 
           return (
-            <li key={uniqid()} className='skills__list-item btn btn--plain animate-fade-in-up'>
+            <li key={skill} className='skills__list-item btn btn--plain animate-fade-in-up'>
               <img
                 src={iconUrl}
                 alt={skill}
                 className='skill__icon'
+                loading='lazy'
                 onError={(e) => { e.target.style.display = 'none' }} // Hide if fails
               />
               <span className='skill__name'>{skill}</span>

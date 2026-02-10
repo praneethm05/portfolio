@@ -134,6 +134,7 @@ const About = () => {
               alt=''
               className='floating-icon'
               style={icon.imgStyle}
+              loading='lazy'
             />
           </div>
         ))}

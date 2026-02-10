@@ -137,6 +137,7 @@ main {
 .btn--outline {
   color: var(--clr-primary);
   border: 2px solid var(--clr-primary);
+  background-color: transparent;
   position: relative;
   overflow: hidden;
   z-index: 1;
