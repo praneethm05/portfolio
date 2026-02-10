@@ -4,7 +4,7 @@
   /* Text gets slightly more space */
   gap: 2em;
   align-items: center;
-  margin-top: 6em;
+  margin-top: 4em;
   /* Adjusted for sticky header */
   min-height: 80vh;
   margin-left: auto;
@@ -115,7 +115,7 @@
 
 .about__desc,
 .about__contact {
-  margin-top: 2.4em;
+  margin-top: 2em;
 }
 
 .about .link--icon {
