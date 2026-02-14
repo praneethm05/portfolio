@@ -10,7 +10,7 @@ const about = {
   role: 'Developer focused on building experiences.',
   description:
     'I craft high-performance applications and immersive digital experiences. From efficient backend systems to immersive mobile & web apps, I blend engineering depth with creative design to build software that stands out.',
-  resume: 'https://example.com',
+  resume: 'https://github.com/praneethm05',
   social: {
     linkedin: 'https://www.linkedin.com/in/praneeth-m-7419802a8/',
     github: 'https://github.com/praneethm05',
