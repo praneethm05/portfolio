@@ -1,3 +1,15 @@
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .nav__list {
   margin-right: 1.5em;
   display: flex;
@@ -5,6 +17,33 @@
 
 .nav__list-item {
   margin-left: 1.5em;
+}
+
+.link--nav {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Desktop Hover Effect */
+.link--nav::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background-color: var(--clr-primary);
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.link--nav:hover::after,
+.link--nav-active::after {
+  width: 100%;
+}
+
+.link--nav-active {
+  color: var(--clr-primary);
 }
 
 .app .nav__hamburger {
@@ -25,30 +64,39 @@
     inset: 0;
     width: 100%;
     height: 100vh;
-    /* Ensure full viewport height */
     z-index: 200;
-    /* Increased z-index */
-    background-color: var(--clr-bg);
-    /* Add background color */
+
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   }
 
+  .dark .nav__list {
+    background: rgba(23, 28, 40, 0.9);
+    /* Darker glass for dark mode */
+  }
+
   .nav__list--active {
     display: flex;
-    /* Ensure it's displayed when active */
     opacity: 1;
     visibility: visible;
+    animation: slideInRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
   .nav__list-item {
-    margin: 0.5em 0;
+    margin: 0.8em 0;
+    /* Increased spacing for easier touch */
   }
 
   .app .nav__hamburger {
     display: flex;
-    z-index: 2;
+    z-index: 201;
+    /* Ensure hamburger is above the glass menu */
     margin-left: 0.8em;
   }
 }
