@@ -2,27 +2,23 @@
   max-width: 900px;
   width: 95%;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5em;
-  /* Add gap for grid feel */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.2em;
 }
 
 .skills__list-item {
   margin: 0;
-  /* Removing the margin and using gap instead */
-  padding: 1.2em 1.5em;
+  padding: 1.4em 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 120px;
 
-  /* Glassmorphism overrides if needed, inheriting from btn--plain but customizing */
   background: var(--clr-bg-alt);
-  border-radius: 8px;
-  transition: transform 0.2s ease-in-out;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out, border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
 }
 
 .dark .skills__list-item {
@@ -33,30 +29,30 @@
 
 .skills__list-item:hover {
   transform: translateY(-5px);
-  /* Use theme primary color for border/shadow on hover */
-  border: 1px solid var(--clr-primary);
-  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.1);
+  border-color: var(--clr-primary);
+  box-shadow: 0 8px 20px rgba(100, 255, 218, 0.1);
 }
 
 .skill__icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 1em;
-  /* Increased spacing */
-  /* Simple icons are SVGs, we can try to filter them to theme color if needed, 
-     but loading them with a specific hex in URL is better. 
-     Currently using '8892b0' in JS. 
-     On hover, perhaps we can change the filter or let it be.
-  */
-  transition: all 0.2s ease;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 0.8em;
+  transition: transform 0.2s ease;
 }
 
 .skills__list-item:hover .skill__icon {
-  transform: scale(1.1);
-  /* Optional: filter to primary color on hover if not done via URL */
+  transform: scale(1.15);
 }
 
 .skill__name {
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .skills__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+  }
 }

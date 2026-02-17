@@ -1,42 +1,85 @@
 .project {
   padding: 2em;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   box-shadow: var(--shadow);
-  transition: transform 0.2s linear;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   background-color: var(--clr-bg-alt);
-  border-radius: 5px;
+  border-radius: 10px;
+
+  /* Equal-height card layout */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .dark .project {
   background: rgba(17, 34, 64, 0.7);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .project:hover {
   transform: translateY(-7px);
-  box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+  box-shadow: 0 20px 40px -15px rgba(2, 12, 27, 0.7);
+}
+
+.dark .project:hover {
+  border-color: rgba(100, 255, 218, 0.3);
+  box-shadow: 0 20px 40px -15px rgba(2, 12, 27, 0.7),
+    0 0 20px rgba(100, 255, 218, 0.05);
+}
+
+.project h3 {
+  color: var(--clr-fg-alt);
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .project__description {
   margin-top: 1em;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--clr-fg);
+  flex-grow: 1;
 }
 
 .project__stack {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 1.2em 0;
+  gap: 0.5em;
+  margin: 1.5em 0 1em;
 }
 
 .project__stack-item {
-  margin: 0.5em;
   font-weight: 500;
-  font-size: 0.8rem;
-  color: var(--clr-fg-alt);
+  font-size: 0.75rem;
+  color: var(--clr-primary);
+  padding: 0.3em 0.8em;
+  border-radius: 20px;
+  border: 1px solid var(--clr-primary);
+  opacity: 0.85;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.project__stack-item:hover {
+  opacity: 1;
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+.project__links {
+  display: flex;
+  gap: 0.8em;
+  margin-top: 0.5em;
 }
 
 .project .link--icon {
-  margin-left: 0.5em;
+  margin-left: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project .link--icon:hover {
+  color: var(--clr-primary);
+  transform: translateY(-2px);
 }

@@ -2,12 +2,10 @@ import './Footer.css'
 
 const Footer = () => (
   <footer className='footer'>
-    <a
-      href='/'
-      className='link footer__link'
-    >
-      Evolving Soon
-    </a>
+    <p className='footer__text'>
+      &copy; 2026 Praneeth M &mdash; Built with{' '}
+      <span className='footer__heart'>&hearts;</span> and React
+    </p>
   </footer>
 )
 
