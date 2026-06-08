@@ -1,11 +1,9 @@
 const header = {
-
   homepage: 'https://findpraneeth.vercel.app/',
   title: 'PM.',
 }
 
 const about = {
-
   name: 'Praneeth M',
   role: 'Developer focused on building experiences.',
   description:
@@ -18,8 +16,6 @@ const about = {
 }
 
 const projects = [
-  // projects can be added or removed
-  // if there are no projects, Projects section won't show up
   {
     name: 'BLIP Engine',
     description:
@@ -47,7 +43,7 @@ const projects = [
   {
     name: 'Hunger Green',
     description:
-      'Get ready for a fresh take on healthy living! Hunger Green is on the horizon, promising to redefine your approach to diet and wellness. Stay tuned for an app that will simplify your health journey and inspire better choices. A new way to nourish your life is coming soon!',
+      'Get ready for a fresh take on healthy living! Hunger Green is on the horizon, promising to redefine your approach to diet and wellness. Stay tuned for an app that will simplify your health journey and inspire better choices.',
     stack: ['React-Native', 'Gemini', 'Firebase'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
@@ -55,7 +51,7 @@ const projects = [
   {
     name: 'SubscribeUS',
     description:
-      'Simplify your life with SubscribeUS! Soon, you’ll have a seamless way to manage all your subscriptions effortlessly. Stay tuned for an intuitive system that keeps track of your services and helps you stay organized. Get ready for a smarter approach to subscription management!',
+      "Simplify your life with SubscribeUS! A seamless way to manage all your subscriptions effortlessly — an intuitive system that keeps track of your services and helps you stay organized.",
     stack: ['Flutter', 'MongoDB'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
@@ -63,55 +59,34 @@ const projects = [
   {
     name: 'Crick P',
     description:
-      'Something exciting is coming your way! Crick P is set to revolutionize your sports experience with innovative features and tools. Stay tuned for a new way to elevate your game and connect with the community. Get ready for a game-changer!',
+      'Crick P is set to revolutionize your sports experience with innovative features and tools. A new way to elevate your game and connect with the community.',
     stack: ['Flutter', 'Firebase'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
   },
 ]
 
+// name: display label  |  icon: simpleicons.org slug
 const skills = [
-  // skills can be added or removed
-  // if there are no skills, Skills section won't show up
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'TypeScript',
-  'Go',
-  'React Native',
-  'Svelte',
-  'Flutter',
-  'Dart',
-  'Python',
-  'Tailwind CSS',
-  'Git',
-  'Supabase',
-  'MongoDB',
-  'Node.js',
-
+  { name: 'HTML', icon: 'html5' },
+  { name: 'CSS', icon: 'css' },
+  { name: 'JavaScript', icon: 'javascript' },
+  { name: 'TypeScript', icon: 'typescript' },
+  { name: 'Go', icon: 'go' },
+  { name: 'React Native', icon: 'react' },
+  { name: 'Svelte', icon: 'svelte' },
+  { name: 'Flutter', icon: 'flutter' },
+  { name: 'Dart', icon: 'dart' },
+  { name: 'Python', icon: 'python' },
+  { name: 'Tailwind CSS', icon: 'tailwindcss' },
+  { name: 'Git', icon: 'git' },
+  { name: 'Supabase', icon: 'supabase' },
+  { name: 'MongoDB', icon: 'mongodb' },
+  { name: 'Node.js', icon: 'nodedotjs' },
 ]
 
 const contact = {
-
   email: 'praneethmofficial@gmail.com',
 }
 
-const skillIcons = {
-  HTML: 'html5',
-  CSS: 'css',
-  JavaScript: 'javascript',
-  TypeScript: 'typescript',
-  Go: 'go',
-  Svelte: 'svelte',
-  Flutter: 'flutter',
-  Dart: 'dart',
-  Python: 'python',
-  'Tailwind CSS': 'tailwindcss',
-  Git: 'git',
-  Supabase: 'supabase',
-  MongoDB: 'mongodb',
-  'Node.js': 'nodedotjs',
-  'React Native': 'react',
-}
-
-export { header, about, projects, skills, contact, skillIcons }
+export { header, about, projects, skills, contact }

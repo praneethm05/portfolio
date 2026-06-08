@@ -2,6 +2,7 @@
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
-  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  gap: 1.6em;
+  counter-reset: project-counter;
 }

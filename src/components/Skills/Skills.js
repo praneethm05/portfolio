@@ -1,5 +1,14 @@
-import { skills, skillIcons } from '../../portfolio'
+import { skills } from '../../portfolio'
 import './Skills.css'
+
+const PILL_CONFIG = [
+  { bg: '#E07B39', text: '#FFFBF5', iconColor: 'ffffff' },
+  { bg: '#5CC8C8', text: '#FFFBF5', iconColor: 'ffffff' },
+  { bg: '#FFD166', text: '#2D1E0F', iconColor: '2D1E0F' },
+  { bg: '#FF9FB2', text: '#2D1E0F', iconColor: '2D1E0F' },
+  { bg: '#74B9FF', text: '#FFFBF5', iconColor: 'ffffff' },
+  { bg: '#6BCB77', text: '#FFFBF5', iconColor: 'ffffff' },
+]
 
 const Skills = () => {
   if (!skills.length) return null
@@ -8,20 +17,23 @@ const Skills = () => {
     <section className='section skills' id='skills'>
       <h2 className='section__title'>Skills</h2>
       <ul className='skills__list'>
-        {skills.map((skill) => {
-          const iconSlug = skillIcons[skill] || 'github' // Default to github if not found
-          const iconUrl = `https://cdn.simpleicons.org/${iconSlug}/64ffda` // Default color matching theme
-
+        {skills.map(({ name, icon }, index) => {
+          const config = PILL_CONFIG[index % PILL_CONFIG.length]
           return (
-            <li key={skill} className='skills__list-item btn btn--plain animate-fade-in-up'>
+            <li
+              key={name}
+              className='skill-pill'
+              style={{ '--pill-bg': config.bg, '--pill-text': config.text }}
+            >
               <img
-                src={iconUrl}
-                alt={skill}
-                className='skill__icon'
+                src={`https://cdn.simpleicons.org/${icon}/${config.iconColor}`}
+                alt=''
+                className='skill-pill__icon'
                 loading='lazy'
-                onError={(e) => { e.target.style.display = 'none' }} // Hide if fails
+                aria-hidden='true'
+                onError={(e) => { e.target.style.display = 'none' }}
               />
-              <span className='skill__name'>{skill}</span>
+              <span>{name}</span>
             </li>
           )
         })}

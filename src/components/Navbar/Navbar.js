@@ -1,10 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
+import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
+import Brightness2Icon from '@material-ui/icons/Brightness2'
 import { projects, skills, contact } from '../../portfolio'
+import { ThemeContext } from '../../contexts/theme'
 import './Navbar.css'
 
 const Navbar = () => {
+  const [{ themeName, toggleTheme }] = useContext(ThemeContext)
   const [showNavList, setShowNavList] = useState(false)
   const [activeSection, setActiveSection] = useState('')
 
@@ -14,9 +18,7 @@ const Navbar = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
+          if (entry.isIntersecting) setActiveSection(entry.target.id)
         })
       },
       { threshold: 0.5 }
@@ -24,23 +26,18 @@ const Navbar = () => {
 
     const sections = document.querySelectorAll('section')
     sections.forEach((section) => observer.observe(section))
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section))
-    }
+    return () => sections.forEach((section) => observer.unobserve(section))
   }, [])
 
   return (
     <nav className='center nav'>
-      <ul
-        className={showNavList ? 'nav__list nav__list--active' : 'nav__list'}
-      >
+      <ul className={`nav__list${showNavList ? ' nav__list--active' : ''}`}>
         {projects.length ? (
           <li className='nav__list-item'>
             <a
               href='#projects'
               onClick={toggleNavList}
-              className={`link link--nav ${activeSection === 'projects' ? 'link--nav-active' : ''}`}
+              className={`link link--nav${activeSection === 'projects' ? ' link--nav-active' : ''}`}
             >
               Projects
             </a>
@@ -52,7 +49,7 @@ const Navbar = () => {
             <a
               href='#skills'
               onClick={toggleNavList}
-              className={`link link--nav ${activeSection === 'skills' ? 'link--nav-active' : ''}`}
+              className={`link link--nav${activeSection === 'skills' ? ' link--nav-active' : ''}`}
             >
               Skills
             </a>
@@ -64,7 +61,7 @@ const Navbar = () => {
             <a
               href='#contact'
               onClick={toggleNavList}
-              className={`link link--nav ${activeSection === 'contact' ? 'link--nav-active' : ''}`}
+              className={`link link--nav${activeSection === 'contact' ? ' link--nav-active' : ''}`}
             >
               Contact
             </a>
@@ -72,7 +69,6 @@ const Navbar = () => {
         ) : null}
       </ul>
 
-      {/* Theme toggle disabled
       <button
         type='button'
         onClick={toggleTheme}
@@ -81,7 +77,6 @@ const Navbar = () => {
       >
         {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
       </button>
-      */}
 
       <button
         type='button'

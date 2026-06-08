@@ -1,20 +1,18 @@
 .about {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  /* Text gets slightly more space */
-  gap: 2em;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 3em;
   align-items: center;
-  margin-top: 4em;
-  /* Adjusted for sticky header */
+  margin-top: 3em;
   min-height: 80vh;
+  max-width: 1100px;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1100px;
-  /* Increased max-width for split layout */
-  width: 90%;
   position: relative;
 }
 
+/* ── Content column ── */
 .about__content {
   display: flex;
   flex-direction: column;
@@ -22,149 +20,152 @@
   z-index: 10;
 }
 
-.about__visual {
-  position: relative;
-  height: 500px;
-  /* Fixed height for visual area */
-  width: 100%;
-  /* Optional: subtle background for the visual area */
-  /* background: radial-gradient(circle, rgba(100, 255, 218, 0.05) 0%, transparent 70%); */
-  transform: translateX(40px);
-  /* Shift entire visual group right */
-}
-
-.about__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  /* Changed from -1 to 0 */
-  pointer-events: none;
-}
-
-.floating-icon {
-  position: absolute;
-  opacity: 0.5;
-  /* Significantly increased visibility */
-  animation: float 20s infinite ease-in-out;
-}
-
-/* Ensure text is above background icons */
-.about h1,
-.about h2,
-.about p,
-.about__contact {
-  position: relative;
-  z-index: 10;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-20px) rotate(10deg);
-  }
-
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-}
-
-.about__name {
+.about__greeting {
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--clr-primary);
-  /* Gradient text effect */
-  background: linear-gradient(45deg, var(--clr-primary), #64ffda, #bd34fe);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-  display: inline-block;
-}
-
-.dark .about__name {
-  background: linear-gradient(90deg, #64ffda, #00bcd4);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4em;
+  opacity: 0;
 }
 
 .about h1 {
-  font-size: 4.5rem;
-  font-weight: 800;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
   margin-bottom: 0.2em;
+  letter-spacing: -0.03em;
+}
+
+.about__name {
+  background: linear-gradient(100deg, #E07B39 0%, #5CC8C8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+.dark .about__name {
+  background: linear-gradient(100deg, #F0894A 0%, #6DD8D8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about__role {
-  margin-top: 0;
-  font-size: 3rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--clr-fg);
   opacity: 0.8;
-  color: var(--clr-fg-alt);
+  letter-spacing: -0.01em;
+  margin-bottom: 0;
 }
 
 .about__desc {
-  font-size: 1.2rem;
-  max-width: 600px;
-  line-height: 1.6;
-  opacity: 0;
-  /* Managed by animation class */
+  font-size: 1.05rem;
+  max-width: 540px;
+  line-height: 1.75;
+  margin-top: 1.4em;
+  color: var(--clr-fg);
 }
 
-.about__desc,
-.about__contact {
+.about__actions {
   margin-top: 2em;
+  gap: 1.2em;
+  flex-wrap: wrap;
 }
 
-.about .link--icon {
-  margin-right: 0.8em;
+.about__social {
+  display: flex;
+  gap: 0.8em;
 }
 
-.about .btn--outline {
-  margin-right: 1em;
+.about__social-link {
+  font-size: 1.5rem;
 }
 
-/* .about__background removed in favor of .about__visual container logic */
-
-/* .about__background removed in favor of .about__visual container logic */
-
-.floating-icon {
-  /* position: absolute;  Moved to wrapper in JS */
-  opacity: 0.6;
-  /* High visibility in dedicated area */
-  filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.3));
-  /* Glow effect */
-  animation: float 6s infinite ease-in-out alternate;
-  /* Faster, more dynamic float */
+/* ── Illustration column ── */
+.about__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes blobMorph {
+  0%,100% { border-radius: 58% 42% 55% 45% / 50% 60% 40% 50%; }
+  33%     { border-radius: 42% 58% 38% 62% / 62% 38% 58% 42%; }
+  66%     { border-radius: 56% 44% 62% 38% / 38% 56% 44% 62%; }
+}
+
+.hero-blob {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 209, 102, 0.20) 0%,
+    rgba(92,  200, 200, 0.12) 55%,
+    transparent 80%
+  );
+  border-radius: 58% 42% 55% 45% / 50% 60% 40% 50%;
+  animation: blobMorph 10s ease-in-out infinite;
+  z-index: 0;
+}
+
+.hero-illustration {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 20px 48px rgba(224, 123, 57, 0.15));
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+/* ── Responsive ── */
 @media (max-width: 900px) {
   .about {
     grid-template-columns: 1fr;
-    /* Stack on smaller screens */
-    margin-top: 4em;
     text-align: center;
-    /* Center text on mobile */
+    margin-top: 3em;
+    min-height: unset;
+    gap: 1.5em;
   }
 
   .about__content {
     align-items: center;
-    /* Center items on mobile */
+    order: 1;
   }
 
   .about__visual {
-    display: none;
-    /* Hide complex visual on mobile or move to background */
-    /* Alternatively: height: 200px; and minimal icons */
+    order: 2;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .hero-blob {
+    width: 240px;
+    height: 240px;
   }
 }
 
 @media (max-width: 600px) {
-  .app .about {
-    align-items: center;
-    /* Override previous flex-start */
-    margin-top: 2em;
+  .about h1 {
+    font-size: 2.6rem;
+  }
+
+  .about__role {
+    font-size: 1.1rem;
+  }
+
+  .about__visual {
+    max-width: 220px;
   }
 }

@@ -10,8 +10,8 @@ const Projects = () => {
       <h2 className='section__title'>Featured Projects</h2>
 
       <div className='projects__grid'>
-        {projects.map((project) => (
-          <ProjectContainer key={project.name} project={project} />
+        {projects.map((project, index) => (
+          <ProjectContainer key={project.name} project={project} colorIndex={index} />
         ))}
       </div>
     </section>

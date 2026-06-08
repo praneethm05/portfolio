@@ -1,8 +1,29 @@
 .scroll-top {
   position: fixed;
   bottom: 2em;
-  right: 4em;
-  background-color: transparent;
+  right: 2.5em;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--clr-primary);
+  color: #FFFBF5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(224, 123, 57, 0.35);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.scroll-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(224, 123, 57, 0.50);
+}
+
+.scroll-top a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFBF5;
 }
 
 @media (max-width: 900px) {
