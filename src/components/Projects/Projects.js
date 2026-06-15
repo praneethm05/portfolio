@@ -7,11 +7,10 @@ const Projects = () => {
 
   return (
     <section id='projects' className='section projects'>
-      <h2 className='section__title'>Featured Projects</h2>
-
+      <span className='section__title'>Featured Projects</span>
       <div className='projects__grid'>
-        {projects.map((project) => (
-          <ProjectContainer key={project.name} project={project} />
+        {projects.map((project, index) => (
+          <ProjectContainer key={project.name} project={project} index={index} />
         ))}
       </div>
     </section>

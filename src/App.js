@@ -7,6 +7,7 @@ import './App.css'
 
 const About = lazy(() => import('./components/About/About'))
 const Projects = lazy(() => import('./components/Projects/Projects'))
+const Experience = lazy(() => import('./components/Experience/Experience'))
 const Skills = lazy(() => import('./components/Skills/Skills'))
 const Contact = lazy(() => import('./components/Contact/Contact'))
 
@@ -21,6 +22,7 @@ const App = () => {
         <Suspense fallback={<div className="loading">Loading...</div>}>
           <About />
           <Projects />
+          <Experience />
           <Skills />
           <Contact />
         </Suspense>

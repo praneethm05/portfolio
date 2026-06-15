@@ -1,0 +1,245 @@
+/* ─── Layout ─────────────────────────────────────── */
+
+.timeline {
+  position: relative;
+  /* 36px left-padding creates room for the trunk + dots */
+  padding-left: 36px;
+}
+
+/* The single vertical trunk line */
+.tl-trunk {
+  position: absolute;
+  left: 7px;          /* sits 7px from the timeline's left edge */
+  top: 1em;
+  bottom: 1.5em;
+  width: 1px;
+  background: var(--clr-border);
+}
+
+/* ─── Category group ──────────────────────────────── */
+
+.tl-group {
+  margin-bottom: 0;
+}
+
+.tl-category {
+  display: flex;
+  align-items: center;
+  padding: 1.4em 0 0.5em;
+  position: relative;
+}
+
+/* Large filled dot — marks a category on the trunk */
+.tl-category__dot {
+  position: absolute;
+  /*
+    Trunk is at x=7px from timeline left.
+    Content starts at x=36px (padding-left).
+    Trunk relative to content: 7 - 36 = -29px.
+    To CENTER a 9px dot at -29px: left:-29px; transform:translateX(-50%)
+  */
+  left: -29px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--clr-fg-alt);
+}
+
+.tl-category__label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--clr-fg-alt);
+}
+
+/* ─── Items container ─────────────────────────────── */
+
+.tl-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-bottom: 0.8em;
+}
+
+/* ─── Individual entry node ───────────────────────── */
+
+.tl-node {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Small hollow dot on the trunk */
+.tl-node__dot {
+  position: absolute;
+  left: -29px;
+  top: 1.3em;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--clr-bg-alt);
+  border: 1.5px solid var(--clr-fg-alt);
+  z-index: 1;
+}
+
+/* Horizontal line from trunk to the card */
+.tl-node__connector {
+  position: absolute;
+  left: -29px;
+  top: 1.3em;
+  transform: translateY(-50%);
+  width: 29px;
+  height: 1px;
+  background: var(--clr-border);
+}
+
+/* ─── Card ────────────────────────────────────────── */
+
+.tl-card {
+  flex: 1;
+  background: var(--clr-bg-alt);
+  border: 1px solid var(--clr-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tl-card__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9em 1.2em;
+  text-align: left;
+  gap: 1em;
+  background: transparent;
+  cursor: default;
+}
+
+.tl-card__header.is-clickable {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.tl-card__header.is-clickable:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.tl-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  min-width: 0;
+}
+
+.tl-card__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--clr-fg-alt);
+}
+
+.tl-card__subtitle {
+  font-size: 0.78rem;
+  color: var(--clr-fg);
+}
+
+.tl-card__right {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  flex-shrink: 0;
+}
+
+.tl-card__meta {
+  font-size: 0.75rem;
+  color: var(--clr-fg);
+  white-space: nowrap;
+}
+
+.tl-card__link {
+  font-size: 0.75rem;
+  color: var(--clr-fg-alt);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.tl-card__link:hover {
+  opacity: 1;
+}
+
+.tl-card__chevron {
+  font-size: 0.8rem;
+  color: var(--clr-fg);
+  display: inline-block;
+  transition: transform 0.25s ease;
+  line-height: 1;
+}
+
+.tl-card__chevron.is-open {
+  transform: rotate(180deg);
+}
+
+/* ─── Expandable body ─────────────────────────────── */
+
+.tl-card__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  border-top: 0px solid var(--clr-border);
+}
+
+.tl-card__body.is-open {
+  max-height: 320px;
+  border-top-width: 1px;
+}
+
+.tl-card__body ul {
+  padding: 1em 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+}
+
+.tl-card__body li {
+  font-size: 0.82rem;
+  color: var(--clr-fg);
+  line-height: 1.65;
+  padding-left: 1.1em;
+  position: relative;
+}
+
+.tl-card__body li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--clr-fg);
+  opacity: 0.4;
+}
+
+/* ─── Responsive ──────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .tl-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+
+  .tl-card__right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .tl-card__meta {
+    font-size: 0.72rem;
+  }
+}

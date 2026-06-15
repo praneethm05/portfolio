@@ -12,7 +12,7 @@ const about = {
     'I craft high-performance applications and immersive digital experiences. From efficient backend systems to immersive mobile & web apps, I blend engineering depth with creative design to build software that stands out.',
   resume: 'https://github.com/praneethm05',
   social: {
-    linkedin: 'https://www.linkedin.com/in/praneeth-m-7419802a8/',
+    linkedin: 'https://www.linkedin.com/in/praneethm05/',
     github: 'https://github.com/praneethm05',
   },
 }
@@ -96,6 +96,67 @@ const contact = {
   email: 'praneethmofficial@gmail.com',
 }
 
+const experience = [
+  {
+    category: 'Education',
+    items: [
+      {
+        title: 'Master of Computer Applications',
+        subtitle: 'CHRIST (Deemed to be University) · Bengaluru',
+        meta: '2025 – Present',
+        details: [],
+      },
+      {
+        title: 'Bachelor of Computer Applications',
+        subtitle: 'St Aloysius (Deemed to be University) · Mangalore',
+        meta: '2022 – 2025',
+        details: [],
+      },
+    ],
+  },
+  {
+    category: 'Work',
+    items: [
+      {
+        title: 'React Native Developer Intern',
+        subtitle: 'Dquantix Technologies · Bangalore',
+        meta: 'Feb 2025 – May 2026',
+        details: [
+          'Engineered cross-platform React Native applications (Android/iOS) with highly responsive, scalable UIs using TypeScript.',
+          'Architected secure authentication flows (JWT) and centralized application state management utilizing Redux.',
+          'Integrated complex RESTful APIs and implemented efficient multi-part file upload mechanisms for seamless data sync.',
+        ],
+      },
+    ],
+  },
+  {
+    category: 'Leadership',
+    items: [
+      {
+        title: 'Committee Head – Design',
+        subtitle: 'Gateways 2025 · National IT Fest, CHRIST University',
+        meta: '2025',
+        details: [
+          'Collaborated with a design team to create digital assets, posters, and promotional materials for a national-level IT fest.',
+          'Provided creative direction and design support across multiple department events.',
+        ],
+      },
+    ],
+  },
+  {
+    category: 'Certifications',
+    items: [
+      {
+        title: 'The Complete React Native + Hooks Course',
+        subtitle: 'Stephen Grider · Udemy',
+        meta: 'Nov 2024',
+        details: [],
+        link: 'https://www.udemy.com/certificate/UC-5d6a2481-a6b0-44c5-aaa1-b5e807d51e02/',
+      },
+    ],
+  },
+]
+
 const skillIcons = {
   HTML: 'html5',
   CSS: 'css',
@@ -114,4 +175,4 @@ const skillIcons = {
   'React Native': 'react',
 }
 
-export { header, about, projects, skills, contact, skillIcons }
+export { header, about, projects, skills, contact, skillIcons, experience }

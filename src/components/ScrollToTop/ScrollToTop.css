@@ -1,8 +1,31 @@
 .scroll-top {
   position: fixed;
-  bottom: 2em;
-  right: 4em;
-  background-color: transparent;
+  bottom: 2.5em;
+  right: 2em;
+  background: var(--clr-tile);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  overflow: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.scroll-top:hover {
+  opacity: 1;
+}
+
+.scroll-top a {
+  color: #ffffff;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 900px) {

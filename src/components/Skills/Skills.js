@@ -6,22 +6,22 @@ const Skills = () => {
 
   return (
     <section className='section skills' id='skills'>
-      <h2 className='section__title'>Skills</h2>
+      <span className='section__title'>Things I&apos;ve worked with</span>
       <ul className='skills__list'>
         {skills.map((skill) => {
-          const iconSlug = skillIcons[skill] || 'github' // Default to github if not found
-          const iconUrl = `https://cdn.simpleicons.org/${iconSlug}/64ffda` // Default color matching theme
-
+          const iconSlug = skillIcons[skill]
           return (
-            <li key={skill} className='skills__list-item btn btn--plain animate-fade-in-up'>
-              <img
-                src={iconUrl}
-                alt={skill}
-                className='skill__icon'
-                loading='lazy'
-                onError={(e) => { e.target.style.display = 'none' }} // Hide if fails
-              />
-              <span className='skill__name'>{skill}</span>
+            <li key={skill} className='skills__item' title={skill}>
+              {iconSlug && (
+                <img
+                  src={`https://cdn.simpleicons.org/${iconSlug}/ffffff`}
+                  alt={skill}
+                  className='skills__icon'
+                  loading='lazy'
+                  onError={(e) => { e.target.style.display = 'none' }}
+                />
+              )}
+              <span className='skills__name'>{skill}</span>
             </li>
           )
         })}

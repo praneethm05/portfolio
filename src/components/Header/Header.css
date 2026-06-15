@@ -1,51 +1,40 @@
 .header {
-  height: 5em;
-  /* Slightly smaller for a cleaner look */
-  max-width: 100%;
-  /* Spanning full width for sticky header */
+  height: 4.5em;
   width: 100%;
   padding: 0 5%;
-  /* Restore the centering feel */
   margin: 0 auto;
   justify-content: space-between;
-
-  /* Sticky & Glass */
   position: sticky;
   top: 0;
   z-index: 100;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease;
 }
 
-/* Pseudo-element for the glass effect background */
-/* Pseudo-element for the glass effect background */
 .header::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.9);
-  /* Increased opacity */
-  backdrop-filter: blur(15px);
-  /* Increased blur */
-  -webkit-backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  /* Added subtle border */
+  inset: 0;
+  background: rgba(236, 236, 234, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--clr-border);
   z-index: -1;
-  transition: all 0.3s ease-in-out;
 }
 
-.dark .header::before {
-  background: rgba(10, 25, 47, 0.95);
-  /* Increased opacity for dark mode */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  /* Added subtle border */
-  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+.header h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header h3 a {
+  color: var(--clr-fg-alt);
+  text-decoration: none;
 }
 
 @media (max-width: 600px) {
   .header {
-    height: 6em;
+    height: 4em;
   }
 }

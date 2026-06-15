@@ -4,11 +4,10 @@ import PropTypes from 'prop-types'
 const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
-  const [themeName, setThemeName] = useState('dark')
+  const [themeName, setThemeName] = useState('light')
 
   useEffect(() => {
-    // Force dark mode
-    setThemeName('dark')
+    setThemeName('light')
 
     /* Original Theme Logic
     const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
