@@ -5,7 +5,7 @@ const Contact = () => {
   if (!contact.email) return null
 
   return (
-    <section className='section contact' id='contact'>
+    <section className='contact' id='contact'>
       <h2 className='contact__title'>Get in touch.</h2>
       <p className='contact__desc'>
         Have a project in mind or just want to say hello? I&apos;m always open to

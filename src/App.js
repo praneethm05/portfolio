@@ -24,9 +24,12 @@ const App = () => {
           <Projects />
           <Experience />
           <Skills />
-          <Contact />
         </Suspense>
       </main>
+
+      <Suspense fallback={null}>
+        <Contact />
+      </Suspense>
 
       <ScrollToTop />
       <Footer />
