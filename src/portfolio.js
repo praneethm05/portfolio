@@ -1,6 +1,6 @@
 const header = {
 
-  homepage: 'https://findpraneeth.vercel.app/',
+  homepage: 'https://praneethm.dev',
   title: 'PM.',
 }
 
