@@ -120,7 +120,7 @@ const experience = [
       {
         title: 'React Native Developer Intern',
         subtitle: 'Dquantix Technologies · Bangalore',
-        meta: 'Feb 2025 – May 2026',
+        meta: 'April 2025 – Present',
         details: [
           'Engineered cross-platform React Native applications (Android/iOS) with highly responsive, scalable UIs using TypeScript.',
           'Architected secure authentication flows (JWT) and centralized application state management utilizing Redux.',
