@@ -1,4 +1,5 @@
 import { useContext, Suspense, lazy } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { ThemeContext } from './contexts/theme'
 import Header from './components/Header/Header'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
@@ -33,6 +34,7 @@ const App = () => {
 
       <ScrollToTop />
       <Footer />
+      <Analytics />
     </div>
   )
 }
