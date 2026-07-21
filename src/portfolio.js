@@ -23,50 +23,53 @@ const projects = [
   {
     name: 'BLIP Engine',
     description:
-      'A custom 3D rendering and physics engine with a Flutter-based editor UI. Features a complete rendering pipeline in C++/OpenGL with custom GLSL shaders, a C FFI bridge to Dart, and a DGCNN model for 3D object classification.',
+      'A custom 3D rendering and physics engine with a Flutter-based editor UI. Complete C++/OpenGL rendering pipeline with custom GLSL shaders, a C FFI bridge to Dart, and a DGCNN model that auto-classifies uploaded objects to assign physics properties.',
     stack: ['C++', 'OpenGL', 'GLSL', 'Flutter', 'Dart', 'Python', 'PyTorch'],
-    sourceCode: 'https://github.com/praneethm05',
-    livePreview: 'https://github.com/praneethm05',
+    sourceCode: 'https://github.com/praneethm05/blip-engine',
   },
   {
     name: 'The Campus Connect',
     description:
-      'A modern campus event & communication platform. Built with SvelteKit and Supabase, featuring real-time messaging, committee management, and a polished UI with dynamic theming.',
+      'A real-time campus event & communication platform. Built with SvelteKit and Supabase, featuring live messaging, committee management, and dynamic theming.',
     stack: ['SvelteKit', 'Supabase', 'Tailwind CSS', 'TypeScript'],
-    sourceCode: 'https://github.com/praneethm05',
-    livePreview: 'https://github.com/praneethm05',
+    sourceCode: 'https://github.com/praneethm05/thecampusconnect',
+    livePreview: 'https://thecampusconnect-pi.vercel.app',
   },
   {
-    name: 'Kalajna',
+    name: 'SkillMap',
     description:
-      'An event registration and gallery website with a polished, responsive design. Features a video hero section, AOS animations, and a clean dark-themed aesthetic.',
-    stack: ['HTML', 'CSS', 'Tailwind CSS', 'AOS'],
-    sourceCode: 'https://github.com/praneethm05',
-    livePreview: 'https://github.com/praneethm05',
+      'A full-stack learning tracker with an AI-curated topic generator. Interactive dashboard, progress analytics, and personalized learning paths built on React, Express, and MongoDB.',
+    stack: ['React', 'TypeScript', 'Express', 'MongoDB', 'Tailwind CSS'],
+    sourceCode: 'https://github.com/praneethm05/skillmap',
   },
   {
     name: 'Hunger Green',
     description:
-      'Get ready for a fresh take on healthy living! Hunger Green is on the horizon, promising to redefine your approach to diet and wellness. Stay tuned for an app that will simplify your health journey and inspire better choices. A new way to nourish your life is coming soon!',
-    stack: ['React-Native', 'Gemini', 'Firebase'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+      'A health & diet companion app pairing a React Native (Expo) client with a Node/Express API — meal tracking, AI-assisted recommendations, and a REST backend with its own auth and schema layer.',
+    stack: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'Express'],
+    sourceCode: 'https://github.com/praneethm05/hungergreenapp',
   },
   {
-    name: 'SubscribeUS',
+    name: 'SpyWho',
     description:
-      'Simplify your life with SubscribeUS! Soon, you’ll have a seamless way to manage all your subscriptions effortlessly. Stay tuned for an intuitive system that keeps track of your services and helps you stay organized. Get ready for a smarter approach to subscription management!',
-    stack: ['Flutter', 'MongoDB'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+      'A social deduction party game built with React Native and Expo — full multiplayer round flow from setup through gameplay to results, with haptics and custom navigation.',
+    stack: ['React Native', 'Expo', 'TypeScript'],
+    sourceCode: 'https://github.com/praneethm05/SpyWho',
   },
   {
-    name: 'Crick P',
+    name: 'Zeta',
     description:
-      'Something exciting is coming your way! Crick P is set to revolutionize your sports experience with innovative features and tools. Stay tuned for a new way to elevate your game and connect with the community. Get ready for a game-changer!',
-    stack: ['Flutter', 'Firebase'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+      'A mobile cognitive-research app built for a university attention/reaction-time study. Expo-based mini-game captures timed player interactions for downstream analysis.',
+    stack: ['React Native', 'Expo', 'TypeScript'],
+    sourceCode: 'https://github.com/praneethm05/zeta',
+  },
+  {
+    name: 'Kalajna',
+    description:
+      'An event registration and gallery website with a polished, responsive design. Video hero section, AOS animations, and a clean dark-themed aesthetic.',
+    stack: ['HTML', 'CSS', 'Tailwind CSS', 'AOS'],
+    sourceCode: 'https://github.com/praneethm05/kalajna',
+    livePreview: 'https://kalajna.vercel.app',
   },
 ]
 
