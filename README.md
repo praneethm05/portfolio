@@ -1,68 +1,78 @@
-# Cleanfolio
+# praneethm.dev
 
-Cleanfolio is a portfolio template built with React. However, if you prefer a template built with HTML, CSS, and JavaScript, you can check out [Cleanfolio Minimal](https://github.com/rjshkhr/cleanfolio-minimal).
+Personal portfolio of **Praneeth M** — a single-page React site listing projects, experience, and skills.
 
-## Preview
+Live: [praneethm.dev](https://praneethm.dev)
 
-[![Imgur](https://imgur.com/FwDMNEM.gif)](https://rjshkhr.github.io/cleanfolio)
+## Stack
 
-[Live Demo](https://rjshkhr.github.io/cleanfolio)
+- React 17 + Create React App (`react-scripts` 5)
+- Plain CSS with per-component stylesheets and CSS custom properties
+- Material-UI v4 icons; skill logos pulled from [Simple Icons CDN](https://cdn.simpleicons.org)
+- Space Grotesk / Inter via Google Fonts
+- `@vercel/analytics` for page analytics
+- Deployed on Vercel
 
-## Instructions
+## Sections
 
-### Setup
+| Section | Component | Notes |
+| --- | --- | --- |
+| Hero / About | `About` | Three-column panel: photo, bio + resume link, skill tiles + social links, plus a contact bar |
+| Projects | `Projects`, `ProjectContainer` | Numbered cards with stack chips, source and live-preview links |
+| Experience | `Experience` | Timeline grouped by Education / Work / Leadership / Certifications; entries with bullet points expand on click |
+| Skills | `Skills` | Icon + label grid |
+| Contact | `Contact` | `mailto:` CTA |
 
-```shell
-git clone https://github.com/rjshkhr/cleanfolio
-cd cleanfolio
-```
+Sections hide themselves when their data arrays are empty.
 
-If you use [nvm](https://github.com/nvm-sh/nvm) or [fnm](https://github.com/Schniz/fnm), execute:
+## Behavior worth knowing
 
-```shell
-nvm install
-nvm use
-```
+- `About`, `Projects`, `Experience`, `Skills`, and `Contact` are lazy-loaded via `React.lazy` + `Suspense`; `Header`, `ScrollToTop`, and `Footer` are eager.
+- The navbar highlights the active link using an `IntersectionObserver` over `<section>` elements (0.5 threshold).
+- **Theme switching is intentionally disabled.** `src/contexts/theme.js` hard-pins `themeName` to `light` and `toggleTheme` is a no-op; the original system-preference logic is kept commented out, as is the toggle button in `Navbar.js`. The `.dark` palette still lives in `src/App.css`, so re-enabling means uncommenting both blocks — no CSS work needed.
+- `ScrollToTop` appears past 500px of scroll.
+- `vercel.json` rewrites every route to `/index.html` for SPA routing.
 
-Or:
+## Setup
 
-```shell
-fnm install
-fnm use
-```
-
-To install and launch the project, run these commands:
+Node version is pinned in `.node-version` (v16.7.0) — use `nvm use` or `fnm use`.
 
 ```shell
 yarn
 yarn start
 ```
 
-### How to Use
+Build scripts pass `--openssl-legacy-provider`, which is what keeps this working on newer Node despite the old `react-scripts`/webpack combination.
 
-- Open the `public/index.html` file and replace:
+## Editing content
 
-`<title>John Smith</title>` with `<title>Your Name</title>`.
+Nearly all copy lives in `src/portfolio.js`:
 
-- Open the `src/portfolio.js` file and make the necessary changes.
+- `header` — site title and homepage link
+- `about` — name, role, description, resume URL, social links
+- `projects` — name, description, `stack[]`, `sourceCode`, optional `livePreview`
+- `experience` — array of `{ category, items[] }`; each item takes `title`, `subtitle`, `meta`, `details[]`, optional `link` (renders a "verify ↗" link)
+- `skills` — flat list; the first 8 also render as tiles in the hero
+- `skillIcons` — maps a skill name to its Simple Icons slug. **A skill with no entry here renders as text only**, so add the slug when adding a skill.
+- `contact` — email
 
-### Deployment
+Profile photo: `src/assets/image.jpg`. Page title and meta description: `public/index.html`.
 
-- In the `package.json` file, update:
+## Deployment
 
-`"homepage": "https://rjshkhr.github.io/cleanfolio"`
+Vercel builds from `main` and serves `praneethm.dev`; pushing to `main` deploys.
 
-to `"homepage": "https://yourusername.github.io"`.
+The `deploy` script (`gh-pages -d build`) and the `gh-pages` dependency are unused leftovers — there is no `homepage` field in `package.json` anymore.
 
-- Push the changes to your repository.
-
-- To build and deploy, run the following commands:
+## Scripts
 
 ```shell
-yarn build
-yarn deploy
+yarn start     # dev server
+yarn build     # production build
+yarn lint      # eslint (airbnb + prettier)
+yarn format    # prettier --write
 ```
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](LICENSE)
